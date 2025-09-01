@@ -60,12 +60,18 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
+  const port = Number(process.env.PORT || 5173);
+  
+  // Prefer 'localhost' in VS Code / desktop dev; '0.0.0.0' for containers/WSL
+  const host = process.env.HOST || "localhost";
+
+  // 'reusePort' can trigger ENOTSUP on some systems; skip in dev
+  const listenOpts: any = { port, host };
+  if (process.env.NODE_ENV !== "development") {
+    listenOpts.reusePort = true;
+  }
+
+  server.listen(listenOpts, () => {
+    log(`serving on http://${host}:${port}`);
   });
 })();

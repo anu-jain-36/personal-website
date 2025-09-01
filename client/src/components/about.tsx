@@ -2,89 +2,70 @@ import { Code, Lightbulb, Users, Rocket } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-white" data-testid="about-section">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 bg-gray-50" data-testid="about-section">
+      <div className="max-w-full mx-auto px-12 sm:px-16 lg:px-24">
+        
+        {/* Centered About Me Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary mb-4" data-testid="about-title">About Me</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto" data-testid="about-subtitle">
-            Passionate about crafting digital experiences that make a difference
-          </p>
+          <h2 className="text-4xl sm:text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">
+            About <span className="text-[#00D4FF]">Me</span>
+          </h2>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <p className="text-lg text-gray-700 leading-relaxed" data-testid="about-description-1">
-              With over 5 years of experience in software development, I specialize in building scalable web applications and creating seamless user experiences. My journey began with a Computer Science degree and has evolved through various challenging projects across different industries.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed" data-testid="about-description-2">
-              I'm passionate about clean code, modern development practices, and continuous learning. When I'm not coding, you'll find me contributing to open-source projects, writing technical articles, or exploring the latest technologies.
-            </p>
+        <div className="grid lg:grid-cols-5 gap-16 items-start">
+          
+          {/* Left Side - About Me Text */}
+          <div className="lg:col-span-3 space-y-6">
             
-            <div className="grid sm:grid-cols-2 gap-6 mt-8">
-              <div className="bg-gray-50 p-6 rounded-lg" data-testid="feature-clean-code">
-                <div className="text-3xl text-primary mb-2">
-                  <Code className="h-8 w-8" />
-                </div>
-                <h3 className="font-semibold text-secondary mb-2">Clean Code</h3>
-                <p className="text-gray-600 text-sm">Writing maintainable, readable code following best practices</p>
-              </div>
+            <div className="space-y-6 text-gray-700 leading-relaxed">
+              <p className="text-2xl text-justify">
+                I love building software systems that work seamlessly for people. My drive for creating impactful technology has shaped my career. I joined Tata Consultancy Services as a Systems Engineer. During this time, my curiosity about machine learning and AI inspired me to pursue graduate studies at Rice University, where I completed my Master's in Computer Science with a specialization in Data Science.
+              </p>
               
-              <div className="bg-gray-50 p-6 rounded-lg" data-testid="feature-innovation">
-                <div className="text-3xl text-primary mb-2">
-                  <Lightbulb className="h-8 w-8" />
-                </div>
-                <h3 className="font-semibold text-secondary mb-2">Innovation</h3>
-                <p className="text-gray-600 text-sm">Always exploring new technologies and creative solutions</p>
-              </div>
+              <p className="text-2xl text-justify">
+                I truly enjoy the human factor—seeing how technology can make a difference. Recently, I led a project that transformed raw, fragmented, and unusable data into a dashboard with visualizations. This further allowed me to run machine learning models on the data. The most rewarding part was sitting with the sponsors, understanding their pain points, and applying existing tools and models to craft an effective solution. It was deeply satisfying to know that the system we built would now directly inform policy making. 
+              </p>
               
-              <div className="bg-gray-50 p-6 rounded-lg" data-testid="feature-collaboration">
-                <div className="text-3xl text-primary mb-2">
-                  <Users className="h-8 w-8" />
-                </div>
-                <h3 className="font-semibold text-secondary mb-2">Collaboration</h3>
-                <p className="text-gray-600 text-sm">Working effectively in agile teams and mentoring developers</p>
-              </div>
+              <p className="text-2xl text-justify">
+                I have worn many hats across different technologies. For example, I developed a Learning Management System using the Ruby on Rails, implemented API integrations and built services in Java and Go, and created front-end applications for projects using React. Additionally, I have configured and deployed software solutions on the cloud, further strengthening my skills in delivering scalable systems.
+              </p>
               
-              <div className="bg-gray-50 p-6 rounded-lg" data-testid="feature-performance">
-                <div className="text-3xl text-primary mb-2">
-                  <Rocket className="h-8 w-8" />
-                </div>
-                <h3 className="font-semibold text-secondary mb-2">Performance</h3>
-                <p className="text-gray-600 text-sm">Optimizing applications for speed and scalability</p>
-              </div>
+              <p className="text-2xl text-justify">
+                I'm recognized for writing modular, test-driven code with fool proof error handling. Debugging is one of my strongest skills—I take pride in finding and fixing errors.
+              </p>
+               
+              <p className="text-2xl text-justify">
+                Beyond work, I served as Treasurer for the Indian Students at Rice and recently discovered joy (and challenge!) in running 5K races.
+              </p>
             </div>
           </div>
           
-          <div className="space-y-6">
-            <img 
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
-              alt="Modern office workspace with dual monitor setup" 
-              className="rounded-xl shadow-lg w-full h-auto"
-              data-testid="about-workspace-image"
-            />
+          {/* Right Side - Achievement Tiles */}
+          <div className="lg:col-span-2 grid grid-cols-1 gap-6">
             
-            <div className="bg-gradient-to-r from-primary to-accent p-6 rounded-xl text-white" data-testid="quick-facts">
-              <h3 className="font-semibold text-lg mb-4">Quick Facts</h3>
-              <div className="space-y-3">
-                <div className="flex items-center" data-testid="fact-location">
-                  <span className="mr-3">📍</span>
-                  <span>San Francisco, CA</span>
-                </div>
-                <div className="flex items-center" data-testid="fact-experience">
-                  <span className="mr-3">📅</span>
-                  <span>5+ Years Experience</span>
-                </div>
-                <div className="flex items-center" data-testid="fact-education">
-                  <span className="mr-3">🎓</span>
-                  <span>BS Computer Science</span>
-                </div>
-                <div className="flex items-center" data-testid="fact-availability">
-                  <span className="mr-3">☕</span>
-                  <span>Available for new opportunities</span>
-                </div>
-              </div>
+            {/* Experience Tile */}
+            <div className="bg-gradient-to-r from-white to-blue-50 rounded-2xl shadow-xl py-8 px-12 text-center border-l-4 border-[#00D4FF] hover:shadow-2xl hover:scale-105 transition-all duration-300 transform">
+              <div className="text-6xl font-black text-[#00D4FF] mb-2">5+</div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">Years</div>
+              <div className="text-xl text-gray-600 font-semibold">of Experience</div>
             </div>
+            
+            {/* Projects Tile */}
+            <div className="bg-gradient-to-r from-white to-cyan-50 rounded-2xl shadow-xl py-8 px-12 text-center border-l-4 border-[#00D4FF] hover:shadow-2xl hover:scale-105 transition-all duration-300 transform">
+              <div className="text-6xl font-black text-[#00D4FF] mb-2">15+</div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">Projects</div>
+              <div className="text-xl text-gray-600 font-semibold">Completed</div>
+            </div>
+            
+            {/* Users Tile */}
+            <div className="bg-gradient-to-r from-white to-teal-50 rounded-2xl shadow-xl py-8 px-12 text-center border-l-4 border-[#00D4FF] hover:shadow-2xl hover:scale-105 transition-all duration-300 transform">
+              <div className="text-6xl font-black text-[#00D4FF] mb-2">50K+</div>
+              <div className="text-3xl font-bold text-gray-900 mb-1">Users</div>
+              <div className="text-xl text-gray-600 font-semibold">Served</div>
+            </div>
+            
           </div>
+          
         </div>
       </div>
     </section>

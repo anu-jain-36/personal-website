@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan - Software Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#64748b',
+                        accent: '#06b6d4',
+                        muted: '#f1f5f9'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .timeline-item {
+            transition: all 0.3s ease;
+        }
+        .timeline-item:hover {
+            transform: translateY(-2px);
+        }
+        .skill-badge {
+            transition: all 0.2s ease;
+        }
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-slate-800">
+    
+    <!-- @COMPONENT: Navigation -->
+    <!-- Fixed navigation bar with smooth scrolling links -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-primary">Alex Morgan</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-secondary hover:text-primary transition-colors duration-200 font-medium">About</a>
+                        <a href="#experience" class="text-secondary hover:text-primary transition-colors duration-200 font-medium">Experience</a>
+                        <a href="#skills" class="text-secondary hover:text-primary transition-colors duration-200 font-medium">Skills</a>
+                        <a href="#contact" class="text-secondary hover:text-primary transition-colors duration-200 font-medium">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-secondary hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-secondary hover:text-primary transition-colors duration-200 font-medium">About</a>
+                <a href="#experience" class="block px-3 py-2 text-secondary hover:text-primary transition-colors duration-200 font-medium">Experience</a>
+                <a href="#skills" class="block px-3 py-2 text-secondary hover:text-primary transition-colors duration-200 font-medium">Skills</a>
+                <a href="#contact" class="block px-3 py-2 text-secondary hover:text-primary transition-colors duration-200 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+                    Software Developer
+                </h1>
+                <p class="text-xl sm:text-2xl text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Crafting innovative digital solutions with clean code and modern technologies
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#experience" class="inline-flex items-center px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                        View My Work
+                        <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center px-8 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-200">
+                        Get In Touch
+                        <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Me Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">About Me</h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                    Passionate about creating scalable solutions and beautiful user experiences
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg text-slate-700 leading-relaxed" data-mock="true">
+                        Hi! I'm Alex, a passionate software developer with 5+ years of experience building web applications and mobile solutions. I specialize in full-stack development with a focus on creating intuitive user experiences and scalable backend systems.
+                    </p>
+                    <p class="text-lg text-slate-700 leading-relaxed" data-mock="true">
+                        When I'm not coding, you can find me contributing to open-source projects, learning new technologies, or exploring the great outdoors. I believe in writing clean, maintainable code and collaborating effectively with cross-functional teams.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            <span class="text-secondary" data-mock="true">San Francisco, CA</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-graduation-cap text-primary"></i>
+                            <span class="text-secondary" data-mock="true">BS Computer Science</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-coffee text-primary"></i>
+                            <span class="text-secondary" data-mock="true">Coffee Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Modern office workspace with dual monitors and laptop -->
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                         alt="Professional developer workspace" 
+                         class="rounded-xl shadow-lg w-full h-48 object-cover" data-mock-image="true">
+                    
+                    <!-- Clean minimalist desk setup with coding on screen -->
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                         alt="Technology and coding workspace" 
+                         class="rounded-xl shadow-lg w-full h-48 object-cover" data-mock-image="true">
+                    
+                    <!-- Professional home office with plants and natural light -->
+                    <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                         alt="Modern office setup with natural lighting" 
+                         class="rounded-xl shadow-lg w-full h-48 object-cover" data-mock-image="true">
+                    
+                    <!-- Close-up of hands typing on mechanical keyboard -->
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=400" 
+                         alt="Professional developer workspace with keyboard" 
+                         class="rounded-xl shadow-lg w-full h-48 object-cover" data-mock-image="true">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Me Section -->
+
+    <!-- @COMPONENT: Professional Experience Section -->
+    <section id="experience" class="py-20 bg-muted">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Professional Experience</h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                    A timeline of my professional journey and key achievements
+                </p>
+            </div>
+            
+            <!-- @COMPONENT: Vertical Timeline -->
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-0.5 h-full bg-gray-300"></div>
+                
+                <!-- @MAP: experiences.map(experience => ( -->
+                <div class="timeline-item relative mb-12 ml-16 md:ml-0">
+                    <!-- Timeline dot -->
+                    <div class="absolute left-[-2.25rem] md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-md"></div>
+                    
+                    <!-- Timeline content -->
+                    <div class="md:flex md:justify-between md:items-center">
+                        <div class="md:w-5/12 md:text-right md:pr-8">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2" data-mock="true">Senior Software Engineer</h3>
+                                <h4 class="text-lg font-semibold text-primary mb-3" data-mock="true">TechCorp Solutions</h4>
+                                <p class="text-secondary mb-4 leading-relaxed" data-mock="true">
+                                    Led a team of 4 developers in building scalable web applications. Implemented microservices architecture that improved system performance by 40% and reduced deployment time by 60%.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">React</span>
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">Node.js</span>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-800 text-sm font-medium rounded-full">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-2/12 text-center my-4 md:my-0">
+                            <span class="inline-block bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold" data-mock="true">2022 - Present</span>
+                        </div>
+                        
+                        <div class="md:w-5/12 md:pl-8">
+                            <!-- Code editor with JavaScript on screen -->
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=300" 
+                                 alt="Technology and coding on multiple monitors" 
+                                 class="rounded-lg shadow-lg w-full h-48 object-cover" data-mock-image="true">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item relative mb-12 ml-16 md:ml-0">
+                    <div class="absolute left-[-2.25rem] md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-md"></div>
+                    
+                    <div class="md:flex md:justify-between md:items-center md:flex-row-reverse">
+                        <div class="md:w-5/12 md:text-left md:pl-8">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2" data-mock="true">Full Stack Developer</h3>
+                                <h4 class="text-lg font-semibold text-primary mb-3" data-mock="true">StartupXYZ</h4>
+                                <p class="text-secondary mb-4 leading-relaxed" data-mock="true">
+                                    Developed and maintained multiple client-facing applications. Built responsive web interfaces and RESTful APIs. Collaborated with design team to implement pixel-perfect UI components.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">Vue.js</span>
+                                    <span class="px-3 py-1 bg-orange-100 text-orange-800 text-sm font-medium rounded-full">Python</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 text-sm font-medium rounded-full">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-2/12 text-center my-4 md:my-0">
+                            <span class="inline-block bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold" data-mock="true">2020 - 2022</span>
+                        </div>
+                        
+                        <div class="md:w-5/12 md:pr-8">
+                            <!-- Professional startup office environment -->
+                            <img src="https://pixabay.com/get/ge8c92f0430a415c5ed807bd11a0c1be44f599ce3232987df1ebdba8174569b9bc2a7dbec55087629d9aecffedd41d6a65760c407c16f45695b358472de00f712_1280.jpg" 
+                                 alt="Professional developer workspace with laptop and coffee" 
+                                 class="rounded-lg shadow-lg w-full h-48 object-cover" data-mock-image="true">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item relative mb-12 ml-16 md:ml-0">
+                    <div class="absolute left-[-2.25rem] md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow-md"></div>
+                    
+                    <div class="md:flex md:justify-between md:items-center">
+                        <div class="md:w-5/12 md:text-right md:pr-8">
+                            <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                                <h3 class="text-xl font-bold text-slate-900 mb-2" data-mock="true">Junior Developer</h3>
+                                <h4 class="text-lg font-semibold text-primary mb-3" data-mock="true">Digital Agency Pro</h4>
+                                <p class="text-secondary mb-4 leading-relaxed" data-mock="true">
+                                    Started my professional journey developing custom WordPress themes and e-commerce solutions. Gained experience in client communication and project management while building technical skills.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">PHP</span>
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">JavaScript</span>
+                                    <span class="px-3 py-1 bg-red-100 text-red-800 text-sm font-medium rounded-full">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="md:w-2/12 text-center my-4 md:my-0">
+                            <span class="inline-block bg-accent text-white px-4 py-2 rounded-full text-sm font-semibold" data-mock="true">2019 - 2020</span>
+                        </div>
+                        
+                        <div class="md:w-5/12 md:pl-8">
+                            <!-- Modern office setup with large monitor -->
+                            <img src="https://images.unsplash.com/photo-1587614203976-365c74645e83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&h=300" 
+                                 alt="Modern office setup with computer and plants" 
+                                 class="rounded-lg shadow-lg w-full h-48 object-cover" data-mock-image="true">
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            <!-- @END_COMPONENT: Vertical Timeline -->
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Professional Experience Section -->
+
+    <!-- @COMPONENT: Skills and Technologies Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Skills & Technologies</h2>
+                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                    A comprehensive overview of my technical expertise and tools I work with
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend Development -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-code text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Frontend</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">React</span>
+                            <span class="skill-badge px-3 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-lg">Vue.js</span>
+                            <span class="skill-badge px-3 py-2 bg-purple-100 text-purple-800 text-sm font-medium rounded-lg">Angular</span>
+                            <span class="skill-badge px-3 py-2 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-lg">JavaScript</span>
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">TypeScript</span>
+                            <span class="skill-badge px-3 py-2 bg-pink-100 text-pink-800 text-sm font-medium rounded-lg">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Development -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-server text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Backend</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-lg">Node.js</span>
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">Python</span>
+                            <span class="skill-badge px-3 py-2 bg-red-100 text-red-800 text-sm font-medium rounded-lg">Ruby</span>
+                            <span class="skill-badge px-3 py-2 bg-orange-100 text-orange-800 text-sm font-medium rounded-lg">Java</span>
+                            <span class="skill-badge px-3 py-2 bg-indigo-100 text-indigo-800 text-sm font-medium rounded-lg">Express.js</span>
+                            <span class="skill-badge px-3 py-2 bg-gray-100 text-gray-800 text-sm font-medium rounded-lg">GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Database & Cloud -->
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-database text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Database & Cloud</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">PostgreSQL</span>
+                            <span class="skill-badge px-3 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-lg">MongoDB</span>
+                            <span class="skill-badge px-3 py-2 bg-orange-100 text-orange-800 text-sm font-medium rounded-lg">AWS</span>
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">Docker</span>
+                            <span class="skill-badge px-3 py-2 bg-purple-100 text-purple-800 text-sm font-medium rounded-lg">Kubernetes</span>
+                            <span class="skill-badge px-3 py-2 bg-red-100 text-red-800 text-sm font-medium rounded-lg">Redis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools & Workflow -->
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-2xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Tools & Workflow</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-2 bg-gray-100 text-gray-800 text-sm font-medium rounded-lg">Git</span>
+                            <span class="skill-badge px-3 py-2 bg-purple-100 text-purple-800 text-sm font-medium rounded-lg">GitHub</span>
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">VS Code</span>
+                            <span class="skill-badge px-3 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-lg">Jest</span>
+                            <span class="skill-badge px-3 py-2 bg-red-100 text-red-800 text-sm font-medium rounded-lg">Webpack</span>
+                            <span class="skill-badge px-3 py-2 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-lg">Figma</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="bg-gradient-to-br from-cyan-50 to-teal-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-mobile-alt text-2xl text-cyan-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Mobile</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">React Native</span>
+                            <span class="skill-badge px-3 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-lg">Flutter</span>
+                            <span class="skill-badge px-3 py-2 bg-orange-100 text-orange-800 text-sm font-medium rounded-lg">Swift</span>
+                            <span class="skill-badge px-3 py-2 bg-purple-100 text-purple-800 text-sm font-medium rounded-lg">Kotlin</span>
+                            <span class="skill-badge px-3 py-2 bg-pink-100 text-pink-800 text-sm font-medium rounded-lg">Expo</span>
+                            <span class="skill-badge px-3 py-2 bg-indigo-100 text-indigo-800 text-sm font-medium rounded-lg">Ionic</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl text-rose-600"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Soft Skills</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge px-3 py-2 bg-rose-100 text-rose-800 text-sm font-medium rounded-lg">Team Leadership</span>
+                            <span class="skill-badge px-3 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-lg">Problem Solving</span>
+                            <span class="skill-badge px-3 py-2 bg-green-100 text-green-800 text-sm font-medium rounded-lg">Communication</span>
+                            <span class="skill-badge px-3 py-2 bg-purple-100 text-purple-800 text-sm font-medium rounded-lg">Project Management</span>
+                            <span class="skill-badge px-3 py-2 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-lg">Mentoring</span>
+                            <span class="skill-badge px-3 py-2 bg-indigo-100 text-indigo-800 text-sm font-medium rounded-lg">Agile/Scrum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Expertise Showcase -->
+            <div class="mt-16 grid md:grid-cols-2 gap-8">
+                <!-- Programming languages with progress bars -->
+                <div class="space-y-6">
+                    <!-- Multiple screens showing different programming languages -->
+                    <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Technology and coding on multiple screens showing various programming languages" 
+                         class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true">
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Developer workspace with code editor and terminal -->
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Professional developer workspace with advanced development tools" 
+                         class="rounded-xl shadow-lg w-full h-64 object-cover" data-mock-image="true">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills and Technologies Section -->
+
+    <!-- @COMPONENT: Get In Touch Section -->
+    <section id="contact" class="py-20 bg-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Get In Touch</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Ready to collaborate? Let's discuss your next project or opportunity
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-6">Let's Connect</h3>
+                        <p class="text-gray-300 leading-relaxed mb-8" data-mock="true">
+                            I'm always interested in hearing about new opportunities, interesting projects, or just having a chat about technology. Feel free to reach out!
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Email</h4>
+                                <p class="text-gray-300" data-mock="true">alex.morgan@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Phone</h4>
+                                <p class="text-gray-300" data-mock="true">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Location</h4>
+                                <p class="text-gray-300" data-mock="true">San Francisco, CA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="pt-8 border-t border-gray-700">
+                        <h4 class="text-white font-semibold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-200" data-implementation="Link to LinkedIn profile">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-200" data-implementation="Link to GitHub profile">
+                                <i class="fab fa-github text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-200" data-implementation="Link to Twitter profile">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-gray-700 hover:bg-primary rounded-full flex items-center justify-center transition-colors duration-200" data-implementation="Link to personal blog">
+                                <i class="fas fa-globe text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl p-8 shadow-2xl">
+                    <form id="contact-form" class="space-y-6" data-implementation="Should implement form validation and submission">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200" placeholder="Your full name" required>
+                            <div id="name-error" class="hidden text-red-500 text-sm mt-1">Please enter your name</div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200" placeholder="your.email@example.com" required>
+                            <div id="email-error" class="hidden text-red-500 text-sm mt-1">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200" placeholder="What's this about?" required>
+                            <div id="subject-error" class="hidden text-red-500 text-sm mt-1">Please enter a subject</div>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 resize-none" placeholder="Tell me about your project or opportunity..." required></textarea>
+                            <div id="message-error" class="hidden text-red-500 text-sm mt-1">Please enter your message</div>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-primary focus:ring-offset-2" data-event="click:handleFormSubmit">
+                            <span id="submit-text">Send Message</span>
+                            <span id="loading-text" class="hidden">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>
+                                Sending...
+                            </span>
+                        </button>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Thank you! Your message has been sent successfully.
+                        </div>
+                        
+                        <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            Sorry, there was an error sending your message. Please try again.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Get In Touch Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-slate-800 text-gray-300 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Alex Morgan</h3>
+                    <p class="text-gray-400 leading-relaxed" data-mock="true">
+                        Passionate software developer creating innovative solutions with modern technologies and clean code practices.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-primary transition-colors duration-200">About Me</a></li>
+                        <li><a href="#experience" class="hover:text-primary transition-colors duration-200">Experience</a></li>
+                        <li><a href="#skills" class="hover:text-primary transition-colors duration-200">Skills</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-primary transition-colors duration-200" data-implementation="Link to LinkedIn">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-primary transition-colors duration-200" data-implementation="Link to GitHub">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-primary transition-colors duration-200" data-implementation="Link to Twitter">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-primary transition-colors duration-200" data-implementation="Link to email">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400" data-mock="true">
+                    © 2024 Alex Morgan. All rights reserved. Built with passion and modern web technologies.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Mobile menu functionality
+        (function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on links
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        })();
+
+        // Contact form functionality
+        (function() {
+            const form = document.getElementById('contact-form');
+            const submitButton = form.querySelector('button[type="submit"]');
+            const submitText = document.getElementById('submit-text');
+            const loadingText = document.getElementById('loading-text');
+            const successMessage = document.getElementById('form-success');
+            const errorMessage = document.getElementById('form-error');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Hide previous messages
+                successMessage.classList.add('hidden');
+                errorMessage.classList.add('hidden');
+                
+                // Show loading state
+                submitText.classList.add('hidden');
+                loadingText.classList.remove('hidden');
+                submitButton.disabled = true;
+                
+                // TODO: Implement actual form submission logic here
+                // This would typically involve sending data to a server endpoint
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    // Reset button state
+                    submitText.classList.remove('hidden');
+                    loadingText.classList.add('hidden');
+                    submitButton.disabled = false;
+                    
+                    // Show success message (in real implementation, this would depend on server response)
+                    successMessage.classList.remove('hidden');
+                    
+                    // Reset form
+                    form.reset();
+                }, 2000);
+            });
+            
+            // Form validation
+            const inputs = form.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('blur', validateField);
+                input.addEventListener('input', clearError);
+            });
+            
+            function validateField(e) {
+                const field = e.target;
+                const errorElement = document.getElementById(field.name + '-error');
+                
+                if (!field.value.trim()) {
+                    showError(field, errorElement, 'This field is required');
+                } else if (field.type === 'email' && !isValidEmail(field.value)) {
+                    showError(field, errorElement, 'Please enter a valid email address');
+                } else {
+                    clearFieldError(field, errorElement);
+                }
+            }
+            
+            function clearError(e) {
+                const field = e.target;
+                const errorElement = document.getElementById(field.name + '-error');
+                clearFieldError(field, errorElement);
+            }
+            
+            function showError(field, errorElement, message) {
+                field.classList.add('border-red-500');
+                if (errorElement) {
+                    errorElement.textContent = message;
+                    errorElement.classList.remove('hidden');
+                }
+            }
+            
+            function clearFieldError(field, errorElement) {
+                field.classList.remove('border-red-500');
+                if (errorElement) {
+                    errorElement.classList.add('hidden');
+                }
+            }
+            
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+        })();
+
+        // Smooth scrolling for navigation links
+        (function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80; // Account for fixed header
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+
+        // Add scroll-based navigation highlighting
+        (function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            function highlightNavigation() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('text-primary');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightNavigation);
+            highlightNavigation(); // Initial call
+        })();
+    </script>
+</body>
+</html>

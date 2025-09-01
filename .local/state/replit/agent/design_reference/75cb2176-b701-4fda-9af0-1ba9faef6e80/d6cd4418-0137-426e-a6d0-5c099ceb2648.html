@@ -1,0 +1,709 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Software Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#64748B',
+                        accent: '#F59E0B',
+                        muted: '#94A3B8'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-slate-50 text-slate-800">
+
+    <!-- @COMPONENT: Navigation [fixed navigation with smooth scroll] -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-xl font-bold text-primary">Alex Chen</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="nav-link text-secondary hover:text-primary transition-colors duration-200">About</a>
+                        <a href="#experience" class="nav-link text-secondary hover:text-primary transition-colors duration-200">Experience</a>
+                        <a href="#skills" class="nav-link text-secondary hover:text-primary transition-colors duration-200">Skills</a>
+                        <a href="#contact" class="nav-link text-secondary hover:text-primary transition-colors duration-200">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-secondary hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-slate-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="nav-link block px-3 py-2 text-secondary hover:text-primary">About</a>
+                <a href="#experience" class="nav-link block px-3 py-2 text-secondary hover:text-primary">Experience</a>
+                <a href="#skills" class="nav-link block px-3 py-2 text-secondary hover:text-primary">Skills</a>
+                <a href="#contact" class="nav-link block px-3 py-2 text-secondary hover:text-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section [full-width intro with CTA] -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
+                    Hi, I'm <span class="text-primary">Alex Chen</span>
+                </h1>
+                <p class="text-xl text-secondary mb-8 leading-relaxed">
+                    Full-Stack Software Developer passionate about creating elegant solutions to complex problems. 
+                    I specialize in modern web technologies and love bringing ideas to life through code.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Get In Touch
+                    </a>
+                    <a href="#experience" class="inline-flex items-center px-6 py-3 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-all duration-200">
+                        <i class="fas fa-user mr-2"></i>
+                        View My Work
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:block">
+                <!-- Professional developer workspace with dual monitors and clean setup -->
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                     alt="Professional developer workspace" 
+                     class="rounded-2xl shadow-2xl w-full h-auto">
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section [personal introduction with image] -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">About Me</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- Modern office setup with developer working -->
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                         alt="Modern office setup" 
+                         class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+                <div class="space-y-6">
+                    <p class="text-lg text-secondary leading-relaxed" data-mock="true">
+                        With over 5 years of experience in software development, I've had the privilege of working with 
+                        startups and established companies to build scalable web applications that serve thousands of users.
+                    </p>
+                    <p class="text-lg text-secondary leading-relaxed" data-mock="true">
+                        My journey began with a Computer Science degree from UC Berkeley, and since then, I've been 
+                        constantly learning and adapting to new technologies. I believe in writing clean, maintainable 
+                        code and creating user experiences that are both functional and delightful.
+                    </p>
+                    <p class="text-lg text-secondary leading-relaxed" data-mock="true">
+                        When I'm not coding, you'll find me contributing to open-source projects, mentoring junior 
+                        developers, or exploring the latest developments in AI and machine learning.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 pt-6">
+                        <div class="text-center p-4 bg-slate-50 rounded-lg">
+                            <div class="text-2xl font-bold text-primary mb-1" data-bind="stats.projectsCompleted">50+</div>
+                            <div class="text-sm text-secondary">Projects Completed</div>
+                        </div>
+                        <div class="text-center p-4 bg-slate-50 rounded-lg">
+                            <div class="text-2xl font-bold text-primary mb-1" data-bind="stats.yearsExperience">5+</div>
+                            <div class="text-sm text-secondary">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Experience Section [timeline of work history] -->
+    <section id="experience" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Professional Experience</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="space-y-12">
+                <!-- @MAP: experiences.map(experience => ( -->
+                
+                <!-- Experience Item 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="md:col-span-1">
+                            <!-- Tech startup office environment -->
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300" 
+                                 alt="Modern office environment" 
+                                 class="rounded-lg w-full h-48 object-cover">
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-slate-900" data-bind="experience.title">Senior Full-Stack Developer</h3>
+                                <span class="text-primary font-medium" data-bind="experience.period">2022 - Present</span>
+                            </div>
+                            <h4 class="text-lg text-secondary mb-4" data-bind="experience.company">TechFlow Solutions</h4>
+                            <p class="text-secondary mb-4" data-mock="true">
+                                Led development of a microservices-based e-commerce platform serving 100K+ users. 
+                                Architected scalable backend systems and implemented modern frontend solutions.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">React</span>
+                                <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Node.js</span>
+                                <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">PostgreSQL</span>
+                                <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="md:col-span-1">
+                            <!-- Professional developer at workstation -->
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300" 
+                                 alt="Developer workspace" 
+                                 class="rounded-lg w-full h-48 object-cover">
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-slate-900" data-bind="experience.title">Full-Stack Developer</h3>
+                                <span class="text-primary font-medium" data-bind="experience.period">2020 - 2022</span>
+                            </div>
+                            <h4 class="text-lg text-secondary mb-4" data-bind="experience.company">InnovateWeb Inc.</h4>
+                            <p class="text-secondary mb-4" data-mock="true">
+                                Developed and maintained multiple client websites and web applications. Collaborated with 
+                                design teams to implement pixel-perfect responsive interfaces.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Vue.js</span>
+                                <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">Laravel</span>
+                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">MySQL</span>
+                                <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="md:col-span-1">
+                            <!-- Coding and technology workspace -->
+                            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=300" 
+                                 alt="Technology and coding" 
+                                 class="rounded-lg w-full h-48 object-cover">
+                        </div>
+                        <div class="md:col-span-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                                <h3 class="text-xl font-semibold text-slate-900" data-bind="experience.title">Junior Developer</h3>
+                                <span class="text-primary font-medium" data-bind="experience.period">2019 - 2020</span>
+                            </div>
+                            <h4 class="text-lg text-secondary mb-4" data-bind="experience.company">StartupLab</h4>
+                            <p class="text-secondary mb-4" data-mock="true">
+                                Started my professional journey building internal tools and contributing to the main 
+                                product. Gained experience in agile development and collaborative coding practices.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-cyan-100 text-cyan-800 rounded-full text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">MongoDB</span>
+                                <span class="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm">Express.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Experience Section -->
+
+    <!-- @COMPONENT: Skills Section [interactive skills grid] -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Skills & Technologies</h2>
+                <div class="w-24 h-1 bg-primary mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <!-- Programming and development setup -->
+                    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                         alt="Programming and development" 
+                         class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+                <div>
+                    <!-- Modern tech workspace with multiple screens -->
+                    <img src="https://pixabay.com/get/gb0c7f5a062120ce706645b8176ef4708ca0e92d192e28e9aa7fa5815063d59a37d91f075b7f1d7f34512bfc8ba6d6d355c6689d54784ff01d7ceb6f9c31cf559_1280.jpg" 
+                         alt="Modern tech workspace" 
+                         class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend Skills -->
+                <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-laptop-code text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Frontend Development</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <!-- @MAP: frontendSkills.map(skill => ( -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">React</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 90%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">TypeScript</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 85%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">Vue.js</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 75%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">Tailwind CSS</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 88%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        <!-- @END_MAP )) -->
+                    </div>
+                </div>
+
+                <!-- Backend Skills -->
+                <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-server text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Backend Development</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">Node.js</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 92%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">Python</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 78%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">PostgreSQL</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 85%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">GraphQL</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 72%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & DevOps -->
+                <div class="bg-slate-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-tools text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-slate-900">Tools & DevOps</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">AWS</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Intermediate</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 75%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">Docker</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 80%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">Git</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Advanced</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 95%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-secondary font-medium" data-bind="skill.name">Kubernetes</span>
+                                <span class="text-sm text-muted" data-bind="skill.level">Beginner</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-purple-600 h-2 rounded-full" style="width: 60%" data-bind="skill.percentage"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Skills Section -->
+
+    <!-- @COMPONENT: Contact Section [contact form and information] -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Get In Touch</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                <p class="text-lg text-secondary max-w-2xl mx-auto">
+                    I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <div>
+                        <!-- Professional coding workspace with multiple monitors -->
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
+                             alt="Professional coding workspace" 
+                             class="rounded-2xl shadow-lg w-full h-auto">
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">Email</h4>
+                                <p class="text-secondary" data-bind="contact.email">alex.chen@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-linkedin text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">LinkedIn</h4>
+                                <p class="text-secondary" data-bind="contact.linkedin">linkedin.com/in/alexchen</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fab fa-github text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">GitHub</h4>
+                                <p class="text-secondary" data-bind="contact.github">github.com/alexchen</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900">Location</h4>
+                                <p class="text-secondary" data-bind="contact.location">San Francisco, CA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-lg p-8">
+                    <!-- @STATE: isSubmitting:boolean = false, formData:object = {}, errors:object = {} -->
+                    <form id="contact-form" class="space-y-6" data-event="submit:handleContactSubmit">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Full Name</label>
+                            <input type="text" 
+                                   id="name" 
+                                   name="name" 
+                                   required
+                                   class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
+                                   placeholder="Your full name"
+                                   data-bind="formData.name">
+                            <div class="error-message hidden text-red-600 text-sm mt-1" data-bind="errors.name"></div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email Address</label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   required
+                                   class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
+                                   placeholder="your.email@example.com"
+                                   data-bind="formData.email">
+                            <div class="error-message hidden text-red-600 text-sm mt-1" data-bind="errors.email"></div>
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Subject</label>
+                            <input type="text" 
+                                   id="subject" 
+                                   name="subject" 
+                                   required
+                                   class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200"
+                                   placeholder="What's this about?"
+                                   data-bind="formData.subject">
+                            <div class="error-message hidden text-red-600 text-sm mt-1" data-bind="errors.subject"></div>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                            <textarea id="message" 
+                                      name="message" 
+                                      rows="6" 
+                                      required
+                                      class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-colors duration-200 resize-none"
+                                      placeholder="Tell me about your project or just say hello!"
+                                      data-bind="formData.message"></textarea>
+                            <div class="error-message hidden text-red-600 text-sm mt-1" data-bind="errors.message"></div>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                                data-implementation="Should validate form and handle submission with loading states">
+                            <span class="submit-text">Send Message</span>
+                            <span class="loading-text hidden">
+                                <i class="fas fa-spinner fa-spin mr-2"></i>
+                                Sending...
+                            </span>
+                        </button>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="form-success" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
+                            <i class="fas fa-check-circle mr-2"></i>
+                            Thank you! Your message has been sent successfully.
+                        </div>
+                        
+                        <div id="form-error" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
+                            <i class="fas fa-exclamation-circle mr-2"></i>
+                            Sorry, there was an error sending your message. Please try again.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer [simple footer with links] -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Alex Chen</h3>
+                <p class="text-slate-400 mb-6">Building the future, one line of code at a time.</p>
+                
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors duration-200">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="border-t border-slate-800 pt-8">
+                    <p class="text-slate-400 text-sm">
+                        © 2024 Alex Chen. All rights reserved. Built with passion and modern web technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        (function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const headerOffset = 80;
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/95');
+                    navbar.classList.remove('bg-white/90');
+                } else {
+                    navbar.classList.add('bg-white/90');
+                    navbar.classList.remove('bg-white/95');
+                }
+            });
+
+            // Contact form handling
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // TODO: Implement form validation and submission logic
+                console.log('Form submitted - implement backend integration');
+                
+                // Show success message (demo purposes)
+                const successMsg = document.getElementById('form-success');
+                const errorMsg = document.getElementById('form-error');
+                
+                successMsg.classList.remove('hidden');
+                errorMsg.classList.add('hidden');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections for animation
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+
+        })();
+    </script>
+</body>
+</html>
