@@ -19,7 +19,7 @@ export default function About() {
             
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-2xl text-justify">
-                I love building software systems that work seamlessly for people. My drive for creating impactful technology has shaped my career. I joined Tata Consultancy Services as a Systems Engineer. During this time, my curiosity about machine learning and AI inspired me to pursue graduate studies at Rice University, where I completed my Master's in Computer Science with a specialization in Data Science.
+                I love building software systems that work seamlessly for people. My drive for creating impactful technology has shaped my career. I joined Tata Consultancy Services as a Software Engineer. During this time, my curiosity about machine learning and AI inspired me to pursue graduate studies at Rice University, where I completed my Master's in Computer Science with a specialization in Data Science.
               </p>
               
               <p className="text-2xl text-justify">
@@ -27,7 +27,7 @@ export default function About() {
               </p>
               
               <p className="text-2xl text-justify">
-                I have worn many hats across different technologies. For example, I developed a Learning Management System using the Ruby on Rails, implemented API integrations and built services in Java and Go, and created front-end applications for projects using React. Additionally, I have configured and deployed software solutions on the cloud, further strengthening my skills in delivering scalable systems.
+                I have worn many hats across different technologies. For example, I developed a Learning Management System using the Ruby on Rails, implemented API integrations and built services in Java and Go, and created front-ends for projects using React. Additionally, I have configured and deployed software solutions on the cloud, further strengthening my skills in delivering scalable systems.
               </p>
               
               <p className="text-2xl text-justify">
