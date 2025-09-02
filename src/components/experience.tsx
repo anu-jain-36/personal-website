@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
- interface Experience {
+
+interface Experience {
   id: number;
   title: string;
   organization: string;
@@ -7,10 +8,12 @@ import React, { useState, useEffect, useRef } from 'react';
   side: 'left' | 'right';
   points: string[];
 }
+
 export default function Experience() {
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-   const experiences = [
+
+  const experiences = [
     {
       id: 1,
       title: "Data Science Capstone Project",
@@ -68,6 +71,7 @@ export default function Experience() {
       side: "right"
     }
   ];
+
   // Set ref for each card
   const setCardRef = (index: number) => (el: HTMLDivElement | null) => {
     cardRefs.current[index] = el;
@@ -103,62 +107,67 @@ export default function Experience() {
 
     return () => observer.disconnect();
   }, []);
+
   return (
-      <section id='experience' className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-8">
+    <section id='experience' className="py-12 md:py-20 bg-white">
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
         
         {/* Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
             Professional <span className="text-[#00D4FF]">Experience</span>
           </h2>
         </div>
 
         {/* Timeline Container */}
         <div className="relative">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#00D4FF] h-full"></div>
+          {/* Vertical Line - Hidden on mobile, positioned left on mobile */}
+          <div className="absolute md:left-1/2 left-4 md:transform md:-translate-x-1/2 w-1 bg-[#00D4FF] h-full"></div>
           
           {/* Experience Items */}
-          <div className="space-y-12">
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((exp, index) => (
               <div 
                 key={exp.id} 
-                className="relative flex items-center"
+                className="relative md:flex md:items-center"
                 ref={setCardRef(index)}
                 data-card-id={exp.id}
               >
                 
-                {/* Timeline Dot - Made Bigger */}
-                <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#00D4FF] rounded-full border-4 border-white shadow-lg z-10 transition-all duration-500 ${
+                {/* Timeline Dot */}
+                <div className={`absolute md:left-1/2 left-4 md:transform md:-translate-x-1/2 -translate-x-1/2 md:translate-x-0 w-4 h-4 md:w-6 md:h-6 bg-[#00D4FF] rounded-full border-2 md:border-4 border-white shadow-lg z-10 transition-all duration-500 ${
                   visibleCards.has(exp.id) ? 'scale-100' : 'scale-75 opacity-50'
                 }`}></div>
                 
                 {/* Experience Card */}
-                <div className={`w-1/2 ${exp.side === 'left' ? 'pr-8' : 'pl-8'} ${exp.side === 'right' ? 'ml-auto' : ''}`}>
-                  <div className={`bg-white rounded-xl shadow-lg border border-gray-100 p-8 hover:shadow-xl transition-all duration-700 transform hover:-translate-y-1 ${
+                <div className={`
+                  w-full md:w-1/2 pl-12 md:pl-0
+                  ${exp.side === 'left' ? 'md:pr-8' : 'md:pl-8'} 
+                  ${exp.side === 'right' ? 'md:ml-auto' : ''}
+                `}>
+                  <div className={`bg-white rounded-lg md:rounded-xl shadow-lg border border-gray-100 p-4 md:p-8 hover:shadow-xl transition-all duration-700 transform hover:-translate-y-1 ${
                     visibleCards.has(exp.id) 
                       ? 'opacity-100 translate-y-0 scale-100' 
-                      : `opacity-0 ${exp.side === 'left' ? '-translate-x-8' : 'translate-x-8'} scale-95`
+                      : `opacity-0 translate-x-8 md:${exp.side === 'left' ? '-translate-x-8' : 'translate-x-8'} scale-95`
                   }`}>
                     
                     {/* Header */}
-                    <div className="mb-6">
-                      <h3 className="text-xl font-bold text-gray-900 leading-tight mb-2">{exp.title}</h3>
-                      <div className="flex items-center justify-between">
-                        <p className="text-lg font-semibold text-[#00D4FF]">{exp.organization}</p>
-                        <span className="bg-[#00D4FF] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <div className="mb-4 md:mb-6">
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 leading-tight mb-2">{exp.title}</h3>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                        <p className="text-base md:text-lg font-semibold text-[#00D4FF]">{exp.organization}</p>
+                        <span className="bg-[#00D4FF] text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-semibold self-start sm:self-auto">
                           {exp.year}
                         </span>
                       </div>
                     </div>
                     
                     {/* Bullet Points */}
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 md:space-y-3">
                       {exp.points.map((point, pointIndex) => (
                         <li key={pointIndex} className="flex items-start">
-                          <div className="flex-shrink-0 w-2 h-2 bg-[#00D4FF] rounded-full mt-2 mr-3"></div>
-                          <p className="text-gray-700 leading-relaxed">{point}</p>
+                          <div className="flex-shrink-0 w-1.5 h-1.5 md:w-2 md:h-2 bg-[#00D4FF] rounded-full mt-2 mr-2 md:mr-3"></div>
+                          <p className="text-sm md:text-base text-gray-700 leading-relaxed">{point}</p>
                         </li>
                       ))}
                     </ul>

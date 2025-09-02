@@ -49,9 +49,6 @@ const Skills = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
             Technical <span className="text-[#00D4FF]">Skills</span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            A comprehensive toolkit spanning full-stack development, cloud infrastructure, and cutting-edge AI technologies
-          </p>
         </div>
 
         {/* Skills Grid */}

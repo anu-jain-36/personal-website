@@ -24,7 +24,7 @@ const GetInTouch = () => {
             Get in <span className="text-[#00D4FF]">Touch</span>
           </h2>
           <p className="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-            I am always open to new opportunities and interesting conversations about software, data science, and AI.
+            I am open to new opportunities and interesting conversations about software, data science, and AI.
           </p>
         </div>
 
