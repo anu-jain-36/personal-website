@@ -4,9 +4,9 @@ import path from 'path'
 
 
 export default defineConfig({
-  base: '/personal-website/',
+  base: '/personal-website',
   plugins: [
-    react(),
+    react(), 
   ],
   resolve: {
     alias: {
